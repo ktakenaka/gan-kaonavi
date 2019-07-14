@@ -2,10 +2,12 @@
 - Calculate the average face among every department, every job category, etc...
 - Use GAN ( Generative Adversarial Network )
 
-
-# Setup analytics environment
+# Build Image
 ```
-git clone git@github.com:ktakenaka/analytics_environment.git
-cd analysis
-git clone git@github.com:ktakenaka/gan-kaonavi.git gan-kaonavi
+docker build -t gan-kaonavi .
+```
+
+# Start up
+```
+docker run -it -p 8888:8888 -v $(pwd)/model:/data --rm gan-kaonavi
 ```
